@@ -94,7 +94,7 @@ public class NPCManager : MonoBehaviour
         {
             coins.playerCoins[playerID] -= npcs[npcID].npcPrice;
             population.curPopulation[playerID] += npcs[npcID].npcSpace;
-            income.playerIncome[playerID] += Mathf.RoundToInt(npcs[npcID].npcPrice * 0.2f);
+            income.playerIncome[playerID] += Mathf.RoundToInt(npcs[npcID].npcPrice * 0.4f);
 
             GameObject npcClone = Instantiate(npcs[npcID].npcPrefab);
             npcClone.transform.position = new Vector2(playerSpawner[playerID].position.x + Random.Range(-3f,3f), playerSpawner[playerID].position.y + Random.Range(-3f, 3f));
@@ -126,7 +126,7 @@ public class NPCManager : MonoBehaviour
         npcInfo.transform.Find("NPC Description").GetComponent<TextMeshProUGUI>().text = npcs[npcID].npcDescription;
         npcInfo.transform.Find("NPC Price").GetComponent<TextMeshProUGUI>().text = "Price: " + npcs[npcID].npcPrice;
         npcInfo.transform.Find("NPC Health").GetComponent<TextMeshProUGUI>().text = "Health: " + npcs[npcID].maxHealth;
-        npcInfo.transform.Find("NPC Income").GetComponent<TextMeshProUGUI>().text = "Income for Recruit: " + Mathf.RoundToInt(npcs[npcID].npcPrice * .2f);
+        npcInfo.transform.Find("NPC Income").GetComponent<TextMeshProUGUI>().text = "Income for Recruit: " + Mathf.RoundToInt(npcs[npcID].npcPrice * .4f);
         npcInfo.SetActive(true);
     }
 

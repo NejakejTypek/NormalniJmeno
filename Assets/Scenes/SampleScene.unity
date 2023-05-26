@@ -4694,7 +4694,7 @@ MonoBehaviour:
     npcAttackSpeed: 1
     npcMoveSpeed: 5
     npcRange: 1.3
-    npcSpace: 5
+    npcSpace: 4
     maxHealth: 100
     npcBaseDamage: 15
     armorType: 1
@@ -4713,6 +4713,22 @@ MonoBehaviour:
     npcSpace: 1
     maxHealth: 35
     npcBaseDamage: 1
+    armorType: 1
+    npcLightArmorMultiplier: 0
+    npcMediumArmorMultiplier: 0
+    npcHeavyArmorMultiplier: 0
+  - npcName: Hovnak
+    npcIcon: {fileID: 2800000, guid: 353d673b487ee5248aff86f6ff0a0c64, type: 3}
+    npcPrefab: {fileID: 8861102294752680142, guid: 85183e111b090f5468d8169a8a7e7f7d, type: 3}
+    npcDescription: Hovnitelnikovatelnikovatel
+    npcPrice: 100
+    npcArmor: 20
+    npcAttackSpeed: 1
+    npcMoveSpeed: 1
+    npcRange: 5
+    npcSpace: 3
+    maxHealth: 10
+    npcBaseDamage: 10
     armorType: 1
     npcLightArmorMultiplier: 0
     npcMediumArmorMultiplier: 0

@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour
             population.curPopulation[0] = 0;
             population.curPopulation[1] = 0;
 
-            nextRoundTimer = 60;
+            nextRoundTimer = 30;
         }
 
         spawnTimerText.text = "<color=#f8ff6e>" + Mathf.Round(nextRoundTimer) + "</color>";
