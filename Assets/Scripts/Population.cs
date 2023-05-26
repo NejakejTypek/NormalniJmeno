@@ -12,7 +12,7 @@ public class Population : MonoBehaviour
 
     private void Update()
     {
-        populationText[0].text = "Population: " + (maxPopulation - curPopulation[0]);
-        populationText[1].text = "Population: " + (maxPopulation - curPopulation[1]);
+        populationText[0].text = (maxPopulation - curPopulation[0]).ToString();
+        populationText[1].text = (maxPopulation - curPopulation[1]).ToString();
     }
 }

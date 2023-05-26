@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private Population population;
     [SerializeField] private Coins coins;
+    [SerializeField] private Income income;
 
     IEnumerator spawnNpcs(int npcsToSpawn, int playerID)
     {
@@ -45,8 +46,8 @@ public class Spawner : MonoBehaviour
 
         if (nextRoundTimer <= 0)
         {
-            coins.playerCoins[0] += 1500;
-            coins.playerCoins[1] += 1500;
+            coins.playerCoins[0] += income.playerIncome[0];
+            coins.playerCoins[1] += income.playerIncome[1];
 
             population.curPopulation[0] = 0;
             population.curPopulation[1] = 0;

@@ -10,7 +10,7 @@ public class Coins : MonoBehaviour
 
     private void Update()
     {
-        coinsText[0].text = "Coins: " + playerCoins[0];
-        coinsText[1].text = "Coins: " + playerCoins[1];
+        coinsText[0].text = playerCoins[0].ToString();
+        coinsText[1].text = playerCoins[1].ToString();
     }
 }

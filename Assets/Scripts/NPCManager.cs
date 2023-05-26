@@ -39,6 +39,7 @@ public class NPCManager : MonoBehaviour
     [SerializeField] Transform[] playerSpawner;
     [SerializeField] private Coins coins;
     [SerializeField] private Population population;
+    [SerializeField] private Income income;
 
     [SerializeField] Transform[] playerNPCButtonsParent;
     [SerializeField] private GameObject spawnNPCButtonPrefab;
@@ -93,6 +94,7 @@ public class NPCManager : MonoBehaviour
         {
             coins.playerCoins[playerID] -= npcs[npcID].npcPrice;
             population.curPopulation[playerID] += npcs[npcID].npcSpace;
+            income.playerIncome[playerID] += Mathf.RoundToInt(npcs[npcID].npcPrice * 0.2f);
 
             GameObject npcClone = Instantiate(npcs[npcID].npcPrefab);
             npcClone.transform.position = new Vector2(playerSpawner[playerID].position.x + Random.Range(-3f,3f), playerSpawner[playerID].position.y + Random.Range(-3f, 3f));
@@ -107,6 +109,7 @@ public class NPCManager : MonoBehaviour
             simpleAI.damage = npcs[npcID].npcBaseDamage;
             simpleAI.population = population;
             simpleAI.stoppingDistance = npcs[npcID].npcRange;
+            simpleAI.attackSpeed = npcs[npcID].npcAttackSpeed;
 
             if(playerID == 0)
                 simpleAI.enemyPlayerCrystal = playerSpawner[1].gameObject;
@@ -123,6 +126,7 @@ public class NPCManager : MonoBehaviour
         npcInfo.transform.Find("NPC Description").GetComponent<TextMeshProUGUI>().text = npcs[npcID].npcDescription;
         npcInfo.transform.Find("NPC Price").GetComponent<TextMeshProUGUI>().text = "Price: " + npcs[npcID].npcPrice;
         npcInfo.transform.Find("NPC Health").GetComponent<TextMeshProUGUI>().text = "Health: " + npcs[npcID].maxHealth;
+        npcInfo.transform.Find("NPC Income").GetComponent<TextMeshProUGUI>().text = "Income for Recruit: " + Mathf.RoundToInt(npcs[npcID].npcPrice * .2f);
         npcInfo.SetActive(true);
     }
 

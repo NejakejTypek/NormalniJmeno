@@ -37,7 +37,7 @@ public class Crystal : MonoBehaviour
 
             if(nearestEnemy == null)
             {
-                attackTimer = 1;
+                attackTimer = 4;
                 return;
             }
 
@@ -47,12 +47,12 @@ public class Crystal : MonoBehaviour
                 fireBallClone.transform.position = transform.position;
 
                 if(nearestEnemy.GetComponent<SimpleAI>().playerID == 0)
-                    fireBallClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-25, 0), ForceMode2D.Impulse);
+                    fireBallClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(-20, 0), ForceMode2D.Impulse);
                 else
-                    fireBallClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(25, 0), ForceMode2D.Impulse);
+                    fireBallClone.GetComponent<Rigidbody2D>().AddForce(new Vector2(20, 0), ForceMode2D.Impulse);
             }
 
-            attackTimer = 1;
+            attackTimer = 4;
         }
 
         

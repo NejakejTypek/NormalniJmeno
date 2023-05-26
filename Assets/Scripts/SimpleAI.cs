@@ -24,6 +24,7 @@ public class SimpleAI : MonoBehaviour
     public float damage;
 
     public float curHealth;
+    public float attackSpeed;
 
     public Slider healthBar;
     public float maxHealth;
@@ -70,7 +71,7 @@ public class SimpleAI : MonoBehaviour
                 if(attackTimer <= 0)
                 {
                     enemy.TakeDamage(damage);
-                    attackTimer = .75f;
+                    attackTimer = attackSpeed;
                 } 
             }
             else
@@ -108,7 +109,7 @@ public class SimpleAI : MonoBehaviour
                 graphic.transform.eulerAngles = new Vector3(0, 0, 0);
             }
 
-            if (Mathf.Abs(transform.position.x - destinationObject.transform.position.x) <= stoppingDistance)
+            if (Mathf.Abs(transform.position.x - destinationObject.transform.position.x) <= stoppingDistance + 3)
             {
                 if (destination.y < transform.position.y)
                     if (GetComponent<Rigidbody2D>().velocity.y > -moveSpeed)
